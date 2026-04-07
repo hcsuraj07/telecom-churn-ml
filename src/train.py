@@ -82,7 +82,7 @@ def main():
     y = df["Churn"]
 
     numeric_features = X.select_dtypes(include=["int64", "float64"]).columns.tolist()
-    categorical_features = X.select_dtypes(include=["object"]).columns.tolist()
+    categorical_features = X.select_dtypes(include=["object", "string"]).columns.tolist()
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=0.2, random_state=42, stratify=y
